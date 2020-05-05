@@ -21,6 +21,10 @@ class User extends Model {
     })
   }
 
+  static get hidden(){
+    return ['password'] //metodo hidden vai trazer pra mim tudo que esta na tabela user menos o que esta passado dentro do array [password]
+  }
+
   static get traits(){
     return[
       '@provider:Adonis/Acl/HasRole',
@@ -40,6 +44,10 @@ class User extends Model {
    */
   tokens () {
     return this.hasMany('App/Models/Token')
+  }
+
+  image(){
+    return this.belongsTo('App/Models/Image') //relacionamento da tabela imagem
   }
 }
 
