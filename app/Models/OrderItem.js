@@ -8,7 +8,7 @@ class OrderItem extends Model {
     static get boot(){
         super.boot()
 
-        this.addHook('beforeSave'), 'OrderHook.updateSubtotal'
+        this.addHook('beforeSave', 'OrderItemHook.updateSubtotal')
     }
 
     //como a tabela OrderItens não tem as colunas timestemp que e o mesmo que created_at e updated_at temos que passar a model NoTimestemp que ;e onde tem a funcão que faz a verificacão quando não a timestemp
