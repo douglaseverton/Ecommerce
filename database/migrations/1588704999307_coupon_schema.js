@@ -7,7 +7,7 @@ class CouponSchema extends Schema {
   up () {
     this.create('coupons', (table) => {
       table.increments()
-      table.string('code', 100).notNUllable()
+      table.string('code', 100).notNullable()
       table.dateTime('valid_inicio')  //validade inicial do cupom
       table.dateTime('valid_final')  //  validade final do cupom
       table.integer('quantity').defaultTo(1) // quantidade de cupons caso não seja passado a quantidade será pré determinad 1 cupom
