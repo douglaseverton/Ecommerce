@@ -18,7 +18,7 @@ const Factory = use('Factory')
  Factory.blueprint('App/Models/User', faker => {
    return {
      name: faker.first(),
-     surname: faker.laster(),
+     surname: faker.last(),
      email: faker.email({domain: 'gmail.com'}),
      password: 'secret'
    }
@@ -26,8 +26,8 @@ const Factory = use('Factory')
 
  Factory.blueprint('App/Models/Category', faker => {
     return {
-      title: faker.country(),
-      description: faker.setence(),
+      title: faker.country({full: true}),
+      description: faker.sentence(),
      
     }
  })
