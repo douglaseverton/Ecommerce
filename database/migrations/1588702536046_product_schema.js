@@ -26,7 +26,7 @@ class ProductSchema extends Schema {
       table.foreign('product_id').references('id').inTable('products').onDelete('cascade')
     })
 
-    this.create('product_category', (table) => {
+    this.create('category_product', (table) => {
       table.increments()
       table.integer('product_id').unsigned()
       table.integer('category_id').unsigned()
@@ -38,7 +38,7 @@ class ProductSchema extends Schema {
   }
 
   down () {
-    this.drop('product_category')
+    this.drop('category_product')
     this.drop('image_product')
     this.drop('products')
   }
